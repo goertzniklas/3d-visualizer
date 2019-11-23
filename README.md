@@ -12,4 +12,4 @@ Please check out the links below for more info:
 Because of the Cross-origin resource sharing(CORS) policy - many times the access will be blocked. Just try another picture or write a simple server to upload pictures first.
 
 ## Installation
-Just download the files and run the index.html.
+Just download the files and run the frontend.html.
