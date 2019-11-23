@@ -3,7 +3,9 @@ Takes a picture as input and encodes it's pixel to visualize a 3d object
 
 This script uses the threejs JavaScript 3D library.
 Please check out the links below for more info:
+
 [https://threejs.org/](https://threejs.org/)
+
 [https://github.com/mrdoob/three.js](https://github.com/mrdoob/three.js)
 
 ## NOTE
