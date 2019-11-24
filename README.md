@@ -9,7 +9,7 @@ For more information, please check out the links below:
 [https://github.com/mrdoob/three.js](https://github.com/mrdoob/three.js)
 
 ## NOTE
-Because of the Cross-origin resource sharing(CORS) policy - many times the access will be blocked. Just try another picture or write a simple server to upload pictures first.
+Because of the CORS(Cross-origin resource sharing) policy - sometimes the access to the pixeldata will be blocked without a warning or error message. Just try another picture or write a simple server to upload pictures first.
 
 ## Installation
 Just download the files and run the frontend.html.
