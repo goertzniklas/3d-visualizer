@@ -16,4 +16,7 @@ For more information, please check out the links below:
 Because of the CORS(Cross-origin resource sharing) policy - sometimes the access to the pixeldata will be blocked without a warning or error message. Just try another picture or write a simple server to upload pictures first.
 
 ## Installation
-Just download the files and run the frontend.html.
+Just download the files and run the frontend.html. or visit:
+
+[https://goertz-niklas.de/3djs/frontend.html](https://goertz-niklas.de/3djs/frontend.html)
+
