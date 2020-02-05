@@ -46,7 +46,7 @@ img.onload = function(){
 		
 	//GETTING RGBA VALUES FROM CANVAS:
 	let rgbaArray = [];
-	var idata = c.getImageData(0, 0, width, height);
+	let idata = c.getImageData(0, 0, width, height);
     for (var fi = 0; fi < idata.data.length; fi += 4){
         rgbaArray.push(idata.data[fi]);
         rgbaArray.push(idata.data[fi+1]);
@@ -75,11 +75,11 @@ img.onload = function(){
 	calculatedZ = rgbArray .map(arr => arr.reduce((sum, item) => sum += item, 0));
 
 	//CREATING SCENE && CAMERA:
-	var size = 700;
-	var scene = new THREE.Scene();
-	var camera = new THREE.PerspectiveCamera(75, size/size, 0.1, 1000);
+	let size = 700;
+	let scene = new THREE.Scene();
+	let camera = new THREE.PerspectiveCamera(75, size/size, 0.1, 1000);
 	scene.background = new THREE.Color(0x000000, 0.0);
-	var renderer = new THREE.WebGLRenderer();
+	let renderer = new THREE.WebGLRenderer();
 	renderer.setSize(size, size);
 	document.body.appendChild(renderer.domElement);
 
@@ -88,10 +88,10 @@ img.onload = function(){
 	let a = 0;
 	for (i=0; i < calculatedZ.length/width; i++){
 		for (j=0; j < calculatedZ.length/height; j++, a++){
-			var color = (rgbArray[a][0] + "," + rgbArray[a][1] + "," + rgbArray[a][2]);
-			var geometry = new THREE.BoxGeometry(1, 1, 1); //for beams use: 1,1,calculatedZ[a]/intensity - standart is: (1,1,1)
-			var material = new THREE.MeshBasicMaterial({color:(`rgb(${color})`)});
-			var cube = new THREE.Mesh(geometry, material);
+			let color = (rgbArray[a][0] + "," + rgbArray[a][1] + "," + rgbArray[a][2]);
+			let geometry = new THREE.BoxGeometry(1, 1, 1); //for beams use: 1,1,calculatedZ[a]/intensity - standart is: (1,1,1)
+			let material = new THREE.MeshBasicMaterial({color:(`rgb(${color})`)});
+			let cube = new THREE.Mesh(geometry, material);
 			scene.add(cube);
 			cube.position.x = j-width/2; cube.position.y = -i;
 			if(document.getElementById("invertCheckbox").checked){
@@ -106,37 +106,13 @@ img.onload = function(){
 	
 	//INITIAL CAMERAPOSITIONS FOR 225 X 225 PICTURES:
 	camera.position.y = -height/2;
-	camera.position.z = 170.5;
-	scene.rotation.y = .6;
-
-	//MOVEMENT CONTROLS:
-	document.onkeydown = checkKey;
-	function checkKey(e){
-		e = e || window.event;
-		if(e.keyCode == '87'){
-			camera.position.z -= 1.2; //zoom in
-		}else if(e.keyCode == '83'){
-			camera.position.z += 1.2; //zoom out
-		}else if(e.keyCode == '65'){
-			camera.position.x -= 1.2; //camera go right
-		}else if(e.keyCode == '68'){
-			camera.position.x += 1.2; //camera go left
-		}else if(e.keyCode == '17'){
-			camera.position.y -= 1.2; //camera go down
-		}else if(e.keyCode == '32'){
-			camera.position.y += 1.2; //camera go up
-		}else if(e.keyCode == '69'){
-			scene.rotation.y -= .05;  //rotate left
-		}else if(e.keyCode == '81'){
-			scene.rotation.y += .05;  //rotate right
-		}	
-	}
+	camera.position.z = width;
+	scene.rotation.y = .55;
 
 	//ANIMATE SCENE:
-	var animate = function(){
+	let animate = function(){
 		requestAnimationFrame(animate);
 		renderer.render(scene, camera);
 	};
 	animate();
 };
-
