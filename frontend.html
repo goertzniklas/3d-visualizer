@@ -1,47 +1,17 @@
 <html lang="en">
 	<head>
-		<style>
-			#cv{
-				display:none;
-			}
-			canvas {
-				padding-left:0;
-				padding-right:0;
-				margin-left:auto;
-				margin-right:auto;
-				display:block;
-			}
-			.urlHolder{
-				width:300px;
-				margin:0 auto;
-				margin-bottom:7px;
-				text-align:center;
-				font-family:sans-serif;
-			}
-			#refresh{
-				display:none;
-				margin: 0 auto;
-			}
-			#loading{
-				display:none;
-				margin:0 auto;
-			}
-		</style>
+		<link rel="stylesheet" href="css/custom.css">
 	</head>
 	<body>
 		<div class="urlHolder" id="urlHolder">
-			<input type="text" name="FirstName" id="imgInput" placeholder="URL" value="https://images.unsplash.com/photo-1573980126659-9a8d74a435c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80">
+			<input type="text" name="FirstName" id="imgInput" placeholder="URL" value="https://images.unsplash.com/photo-1513569536235-bf46baacc948?ixlib=rb-1.2.1&auto=format&fit=crop&w=1311&q=80"><br>
+			Intensity(0-100) <input type="number" id="intensityInput" min="0" max="100" value="60"><br>
 			<input type="submit" value="Rendern" id="imgSubmit"><br>
-			Intensity(0-100) <input type="number" id="intensityInput" min="0" max="100" value="30">
-			Invert Z <input type="checkbox" id="invertCheckbox"><br>
+			Invert Z <input type="checkbox" id="invertCheckbox">
 		</div>
-		<div class="urlHolder">
-			<p>W, A, S, D = front, left, back, right <br>
-			SPACE, STRG = up, down <br>
-			Q, E = rotate picture</p>
-		</div>
-		<input type="submit" value="Refresh" id="refresh" onclick="location.reload()"><br>	
-		<img src="loading.gif" id="loading"></img>
+
+		<input type="submit" value="Neu" id="refresh" onclick="location.reload()"><br>	
+		<img src="loading.webp" id="loading"></img>
 		<canvas id="cv"></canvas>
 		<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 		<script src="lib/three.min.js"></script>
